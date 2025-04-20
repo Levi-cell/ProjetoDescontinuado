@@ -1,0 +1,55 @@
+OBJETIVO: Analísar o custo unitário de cada pedido e de cada tipo de unidade.
+
+
+PROPORÇÃO DE QUANTIDADE COM MATERIAL NÃO ORGÂNICO:
+
+
+Materiais que qualquer pedido de qualquer ml precisa ter:
+
+Copinhos : Quantidade : 1000, Custo : R$ 26,00
+
+Tampas : Quantidade : 1000, Custo : R$ 80,00
+
+Tampa de copinhos : Quantidade : 1000, Custo : R$ 120,00
+
+Colheres : Quantidade : 1000, Custo : R$ 72,00
+
+Guardanapos : Quantidade : 1000, Custo : R$ 52,00
+
+Saco de gelados : Quantidade :  1000, Custo : R$ 12,29
+
+Fita Adesiva : Quantidade : 1000, Custo : R$ 12,53
+
+Sacola plástica : Quantidade de: 1000, Custo : R$ 24,9
+
+Total: R$ 399,72
+
+A relação aqui é usada é o valor de cada material para 1000 unidades do material
+
+Valor de 1000 copos de 300ml: R$ 126,00
+
+Custo unitário em material não orgânico: (126 + 399,72) / 1000 = R$ 0,52
+
+Valor de 1000 copos de 400ml: R$ 150,00
+
+Custo unitário em material não orgânico:  (150 + 399,72) / 1000 = R$ 0,55
+
+Valor de 1000 copos de 500ml: R$ 184,00
+
+Custo unitário em material não orgânico: (184 + 399,72) / 1000 = R$ 0,58
+
+
+SQL:
+
+Create DATABASE GerenciamentoFinanceiro;
+use GerenciamentoFinanceiro;
+
+Create table if not exists lucro_diario(
+
+  id_dia int not null AUTO_INCREMENT primary key,
+  data_dia date not null,
+  faturamento_dia float null,
+  custo_dia float null,
+  lucro_dia float null
+
+) COMMENT "Aqui estão os valores diários";
